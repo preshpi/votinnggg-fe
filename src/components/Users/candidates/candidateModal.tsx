@@ -9,13 +9,19 @@ const CandidateModal: React.FC<candidateModalProps> = ({
   show,
   setShow,
   candidate,
+  onSubmit,
 }) => {
   const modalRef = useRef<HTMLDivElement>(null);
   if (!candidate) return null;
 
-  const handleCancel =() => {
+  const handleCancel = () => {
     setShow(false);
-  }
+  };
+
+  const handleSubmit = () => {
+    onSubmit();
+  };
+
   return (
     <Overlay show={show} setShow={setShow} modalRef={modalRef}>
       {show && (
@@ -65,10 +71,16 @@ const CandidateModal: React.FC<candidateModalProps> = ({
           </div>
 
           <div className="w-full gap-3 flex h-full">
-            <button onClick={handleCancel} className="w-full bg-transparent rounded-md text-[#323539] font-semibold py-4 border border-[#E5E5E7]">
+            <button
+              onClick={handleCancel}
+              className="w-full bg-transparent rounded-md text-[#323539] font-semibold py-4 border border-[#E5E5E7]"
+            >
               Cancel
             </button>
-            <button className="w-full py-4 rounded-md  font-semibold text-[#FFFFFF] bg-[#0A77FF]">
+            <button
+              onClick={handleSubmit}
+              className="w-full py-4 rounded-md  font-semibold text-[#FFFFFF] bg-[#0A77FF]"
+            >
               Submit
             </button>
           </div>

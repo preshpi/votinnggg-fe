@@ -1,10 +1,15 @@
-import { Navigate, Outlet, Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Login from "./views/Login";
-import { useAuth } from "./hook/auth";
 import Register from "./views/Register";
 import Home from "./views/User/Home";
 import LandingPage from "./views/landingPage";
-import SuccessfulPage from "./components/Users/candidates/Submission";
+import SuccessfulPage from "./components/Users/SuccessfulPage";
+import Dashboard from "./views/admin";
+import Candidates from "./views/admin/Dashboard/Candidates";
+import Categories from "./views/admin/Dashboard/Categories";
+import Voters from "./views/admin/Dashboard/Voters";
+import Results from "./views/admin/Dashboard/Results";
+import NoMatch from "./views/NoMatch";
 
 // const RequireAuth = () => {
 //   const location = useLocation();
@@ -35,7 +40,14 @@ const AppRoutes = () => {
         <Route path="/register" element={<Register />} />
 
         <Route path="/voting" element={<Home />} />
-        {/* <Route path="/submission" element={<SuccessfulPage />} /> */}
+        <Route path="/voting-finish" element={<SuccessfulPage />} />
+        <Route element={<Dashboard />}>
+          <Route path="/dashboard/*" element={<Candidates />} />
+          <Route path="/dashboard/categories/*" element={<Categories />} />
+          <Route path="/dashboard/voters/*" element={<Voters />} />
+          <Route path="/dashboard/results/*" element={<Results />} />
+        </Route>
+        <Route path="*" element={<NoMatch />} />
       </Routes>
     </>
   );

@@ -1,10 +1,11 @@
+import { SidebarViewProvider } from "./provider/sidebarProvider";
 import AppRoutes from "./Routes";
 
 function App() {
   return (
-    <div>
+    <SidebarViewProvider>
       <AppRoutes />
-    </div>
+    </SidebarViewProvider>
   );
 }
 

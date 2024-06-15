@@ -1,6 +1,15 @@
 import { Button } from "../../components/ui/button";
+import { CandidateListProps } from "../../types/candidate";
 
-const Footer = () => {
+interface FooterProps {
+  selectedCandidate: CandidateListProps | null;
+  onNextCategory: () => void;
+}
+
+const Footer: React.FC<FooterProps> = ({
+  selectedCandidate,
+  onNextCategory,
+}) => {
   return (
     <div className="flex items-center w-full p-5 gap-6 justify-end">
       <Button
@@ -10,8 +19,14 @@ const Footer = () => {
       >
         Finish Voting
       </Button>
-      <Button variant="default" size="lg" className="font-semibold text-[15px]">
-        Submit For Selected Category
+
+      <Button
+        onClick={onNextCategory}
+        variant="default"
+        size="lg"
+        className="font-semibold text-[15px]"
+      >
+        {!selectedCandidate ? "Submit For Selected Category" : "Next Category"}
       </Button>
     </div>
   );
