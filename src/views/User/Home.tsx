@@ -42,7 +42,7 @@ const Home = () => {
   return (
     <>
       <div className="w-[80%] mx-auto p-5">
-        <h3 className="text-center font-bold text-[32px] text-[#323539]">
+        <h3 className="text-center pb-7 font-bold text-[32px] text-[#323539]">
           Cast Your Vote Now
         </h3>
         <TopBar

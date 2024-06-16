@@ -19,7 +19,7 @@ const TopBar = ({
   currentIndex,
 }: TopBarProps) => {
   const handleNext = () => {
-    if (currentIndex < categories.length - 7) {
+    if (currentIndex < categories.length - 5) {
       setCurrentIndex(currentIndex + 1);
     }
   };
@@ -31,25 +31,25 @@ const TopBar = ({
   };
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center w-full">
       <button
         onClick={handlePrev}
         disabled={currentIndex === 0}
-        className="p-3 border-2 border-[#E5E5E7] text-[#000000] rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
+        className="p-2 border-2 border-[#E5E5E7] text-[#000000] rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <MdOutlineArrowBackIos />
       </button>
-      <div className="flex overflow-hidden mx-4">
+      <div className="flex overflow-hidden w-full max-w-[960px] gap-3 mx-4">
         {categories
-          .slice(currentIndex, currentIndex + 7)
+          .slice(currentIndex, currentIndex + 5)
           .map((category, index) => (
             <button
               key={index}
               onClick={() => setSelectedCategory(category)}
-              className={`mx-2 p-2 rounded-[6px] font-[500] ${
+              className={`px-2 py-2 w-full text-[12px] lg:text-[15px] rounded-[6px] font-[500] ${
                 selectedCategory === category
-                  ? "bg-[#ECF4FC] text-[#0A77FF]"
-                  : "bg-[#F8F9FB] text-[#323539]"
+                  ? "bg-[#ECF4FC] text-[#0A77FF] w-full"
+                  : "bg-[#F8F9FB] text-[#323539] w-full"
               }`}
             >
               {category}
@@ -58,8 +58,8 @@ const TopBar = ({
       </div>
       <button
         onClick={handleNext}
-        disabled={currentIndex >= categories.length - 7}
-        className="p-3 border-2 border-[#E5E5E7] text-[#000000]  rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
+        disabled={currentIndex >= categories.length - 5}
+        className="p-2 border-2 border-[#E5E5E7] text-[#000000]  rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <MdArrowForwardIos />
       </button>

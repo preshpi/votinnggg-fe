@@ -31,7 +31,7 @@ const CandidateModal: React.FC<candidateModalProps> = ({
           animate="visible"
           exit="exit"
           ref={modalRef}
-          className="flex w-full max-w-xl flex-col gap-5 items-center rounded-[10px] bg-white p-5"
+          className="flex w-full max-w-[400px] flex-col gap-5 items-center rounded-[10px] bg-white p-5"
         >
           <div>
             <PiInfoThin className="text-[#EEA23E] w-[32px] h-[32px]" />
@@ -73,13 +73,13 @@ const CandidateModal: React.FC<candidateModalProps> = ({
           <div className="w-full gap-3 flex h-full">
             <button
               onClick={handleCancel}
-              className="w-full bg-transparent rounded-md text-[#323539] font-semibold py-4 border border-[#E5E5E7]"
+              className="w-full bg-transparent rounded-md text-[#323539] font-semibold py-2 border border-[#E5E5E7]"
             >
               Cancel
             </button>
             <button
               onClick={handleSubmit}
-              className="w-full py-4 rounded-md  font-semibold text-[#FFFFFF] bg-[#0A77FF]"
+              className="w-full py-2 rounded-md  font-semibold text-[#FFFFFF] bg-[#0A77FF]"
             >
               Submit
             </button>
