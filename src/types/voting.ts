@@ -13,3 +13,11 @@ export type PartyCardProps = {
   numberOfVotes: number;
   image: string;
 };
+
+export type DetailProp = {
+  name: string;
+  email: string;
+  nin: string;
+  phone: string;
+  avatar: string;
+};

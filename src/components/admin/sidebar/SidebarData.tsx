@@ -24,7 +24,7 @@ export const dashBoardSidebarData = [
     id: 3,
     title: "Voter",
     icon: voter,
-    path: "/dashboard/voter",
+    path: "/dashboard/voters",
     className: "",
     submenus: [],
   },

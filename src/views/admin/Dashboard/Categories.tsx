@@ -22,11 +22,12 @@ const Categories = () => {
   return (
     <div className="px-4 py-5">
       <div className="flex items-center justify-start gap-x-3">
-        <p
+        <button
           className={`font-medium ${!currentActivePage ? "text-blue-600" : ""}`}
+          onClick={handleRemoveAddNew}
         >
           Categories
-        </p>
+        </button>
         {currentActivePage && (
           <>
             <SlArrowRight />
