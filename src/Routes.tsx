@@ -3,13 +3,14 @@ import Login from "./views/Login";
 import Register from "./views/Register";
 import Home from "./views/User/Home";
 import LandingPage from "./views/landingPage";
-import SuccessfulPage from "./components/Users/SuccessfulPage";
+import SuccessfulPage from "./components/Users/Voting/VotingFinish";
 import Dashboard from "./views/admin";
 import Candidates from "./views/admin/Dashboard/Candidates";
 import Categories from "./views/admin/Dashboard/Categories";
 import Voters from "./views/admin/Dashboard/Voters";
 import Results from "./views/admin/Dashboard/Results";
 import NoMatch from "./views/NoMatch";
+import VotingResults from "./components/Users/Voting/VotingResults";
 
 // const RequireAuth = () => {
 //   const location = useLocation();
@@ -41,6 +42,7 @@ const AppRoutes = () => {
 
         <Route path="/voting" element={<Home />} />
         <Route path="/voting-finish" element={<SuccessfulPage />} />
+        <Route path="/voting-results" element={<VotingResults />} />
         <Route element={<Dashboard />}>
           <Route path="/dashboard/*" element={<Candidates />} />
           <Route path="/dashboard/categories/*" element={<Categories />} />

@@ -11,20 +11,20 @@ const Footer: React.FC<FooterProps> = ({
   onNextCategory,
 }) => {
   return (
-    <div className="flex items-center w-full p-5 gap-6 justify-end">
+    <div className="flex lg:flex-row flex-col items-center w-full py-7 gap-6 justify-center lg:justify-end">
       <Button
         variant="default"
         size="lg"
-        className="bg-transparent border border-[#C8322B] text-[#C8322B] text-[15px] hover:text-white hover:bg-[#C8322B]/90"
+        onClick={onNextCategory}
+        className="bg-transparent border border-[#C8322B] lg:w-[135px] w-full text-[#C8322B] text-[15px] hover:text-white hover:bg-[#C8322B]/90"
       >
         Finish Voting
       </Button>
 
       <Button
-        onClick={onNextCategory}
         variant="default"
         size="lg"
-        className="font-semibold text-[15px]"
+        className="font-semibold text-[15px] w-full lg:w-[258px]"
       >
         {!selectedCandidate ? "Submit For Selected Category" : "Next Category"}
       </Button>

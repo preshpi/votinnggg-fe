@@ -24,7 +24,7 @@ const CandidateList: React.FC<CategoryViewProps> = ({
       <h4 className="text-[24px] font-semibold text-[#323539]">
         Candidate List
       </h4>
-      <div className="grid grid-cols-2 gap-4 mt-4">
+      <div className="grid lg:grid-cols-2 gap-4 mt-4">
         {content.map((candidate) => (
           <div key={candidate.id}>
             <Card
